@@ -62,12 +62,12 @@ def find_credential(account):
      """
      return Credentials.find_credential(account)
 
-# def generate_Password():
-#     '''
-#     generates a random password for the user.
-#     '''
-#     auto_password=Credentials.generatePassword()
-#     return auto_password
+def generate_Password():
+     '''
+     generates a random password for the user.
+     '''
+     auto_password=Credentials.generatePassword()
+     return auto_password
 
 
 # def main():
