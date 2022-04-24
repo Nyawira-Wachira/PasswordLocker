@@ -18,3 +18,11 @@ class Credentials():
             if(user.username == username and user.password == password):
                     saved_user == user.username
         return saved_user
+    def __init__(self,account,userName, password):
+        """
+        __init__ method that defines properties of user credentials object.
+        """
+        self.account = account
+        self.userName = userName
+        self.password = password
+    
