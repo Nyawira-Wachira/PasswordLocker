@@ -33,29 +33,29 @@ def delete_user(user):
      '''
      user.delete_user()
 
-# def create_new_credential(account,userName,password):
-#     """
-#     Function that creates new credentials for a given user account
-#     """
-#     new_credential = Credentials(account,userName,password)
-#     return new_credential
-# def save_credentials(credentials):
-#     """
-#     Function to save Credentials to the credentials list
-#     """
-#     credentials. save_credentials()
-# def display_accounts_details():
-#     """
-#     Function that returns all the saved credential.
-#     """
-#     return Credentials.display_credentials()
+def create_new_credential(account,userName,password):
+     """
+     Function that creates new credentials for a given user account
+     """
+     new_credential = Credentials(account,userName,password)
+     return new_credential
+def save_credentials(credentials):
+     """
+     Function to save Credentials to the credentials list
+     """
+     credentials. save_credentials()
+def display_accounts_details():
+     """
+     Function that returns all the saved credential.
+     """
+     return Credentials.display_credentials()
 
-# def delete_credential(credentials):
-#     """
-#     Function to delete a Credentials from credentials list
+def delete_credential(credentials):
+     """
+     Function to delete a Credentials from credentials list
 
-#     """
-#     credentials.delete_credentials()
+     """
+     credentials.delete_credentials()
 # def find_credential(account):
 #     """
 #     Function that finds a Credentials by an account name and returns the Credentials that belong to that account
