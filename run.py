@@ -27,11 +27,11 @@ def login_user(username,password):
     check_user = Credentials.verify_user(username,password)
     return check_user
 
-# def delete_user(user):
-#     '''
-#     Function to delete a contact
-#     '''
-#     user.delete_user()
+def delete_user(user):
+     '''
+     Function to delete a contact
+     '''
+     user.delete_user()
 
 # def create_new_credential(account,userName,password):
 #     """
