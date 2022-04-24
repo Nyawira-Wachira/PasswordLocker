@@ -106,6 +106,21 @@ class TestCredentials(unittest.TestCase):
 
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
 
+
+    
+    def test_find_credential(self):
+        """
+        test to check if we can find a credential entry by account name and display the details of the credential
+        """
+        self.new_credential.save_credentials()
+        test_credential = Credentials("Facebook","Abigail_Nyash","VYk%89yt") 
+        test_credential.save_credentials()
+
+        the_credential = Credentials.find_credential("Facebook")
+
+        self.assertEqual(the_credential.account,test_credential.account)
+
+
     # def test_copy_password(self):
     #     '''
     #     Test to confirm that we are copying the password from user credentials.

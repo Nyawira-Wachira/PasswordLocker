@@ -44,15 +44,25 @@ class Credentials():
         """
         return cls.credentials_list
 
+     
+    @classmethod
+    def find_credential(cls, account):
+        """
+        Method that returns credentials matching keyed in account_name.
 
-    # @classmethod
-    # def copy_password(cls,account):
-    #     display_credentials = Credentials.display_credentials(account)
-    #     pyperclip.copy(display_credentials.password)
+        """
+        for credential in cls.credentials_list:
+            if credential.account == account:
+                return credential
+    @classmethod
+    def copy_password(cls,account):
+        found_credentials = Credentials.find_credential(account)
+        pyperclip.copy(found_credentials.password)
+
 
 
     def generatePassword(stringLength=8):
-        """Generate a random password string of letters and digits and special characters"""
+        """method to generate a random password"""
         password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
         return ''.join(random.choice(password) for i in range(stringLength))
 
