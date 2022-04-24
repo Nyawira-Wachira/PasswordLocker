@@ -36,10 +36,24 @@ class Credentials():
         method to delete user account credentials from the credentials list
         """
         Credentials.credentials_list.remove(self)
-def test_display_all_saved_credentials(self):
-        '''
-        method that displays all the credentials that has been saved by the user
-        '''
+    @classmethod
+    def display_credentials(cls):
+        """
+        Method that returns all items in the credentials list
 
-        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+        """
+        return cls.credentials_list
+
+
+    # @classmethod
+    # def copy_password(cls,account):
+    #     display_credentials = Credentials.display_credentials(account)
+    #     pyperclip.copy(display_credentials.password)
+
+
+    def generatePassword(stringLength=8):
+        """Generate a random password string of letters and digits and special characters"""
+        password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+        return ''.join(random.choice(password) for i in range(stringLength))
+
     
