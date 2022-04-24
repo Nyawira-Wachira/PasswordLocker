@@ -36,5 +36,10 @@ class Credentials():
         method to delete user account credentials from the credentials list
         """
         Credentials.credentials_list.remove(self)
+def test_display_all_saved_credentials(self):
+        '''
+        method that displays all the credentials that has been saved by the user
+        '''
 
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
     
