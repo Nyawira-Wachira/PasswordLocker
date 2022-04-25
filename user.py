@@ -16,6 +16,7 @@ class User:
         method to save new user instance into the user list
         """
         User.user_list.append(self)
+    
     @classmethod
     def display_users(cls):
         """

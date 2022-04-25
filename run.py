@@ -46,7 +46,7 @@ def save_credentials(credentials):
      credentials. save_credentials()
 def display_accounts_details():
      """
-     Function that returns all the saved credential.
+     Function that returns credentials saved in the list.
      """
      return Credentials.display_credentials()
 
@@ -71,37 +71,40 @@ def generate_Password():
 
 
 def main():
-        print("Hello,  What is your name?")
+        print("Hi, what is your name?")
         user_name = input()
-        
+        print('.' * 50)
         print(f"Hello {user_name}, what would you like to do?")
-        print('\n')
+        print('.' * 50)
 
-        # while True:
-        print("Use these short codes : ca - create a new account, al - account login")
+        print("Use short codes :\n ca - To create Password Locker account,\n al -To login to existing account")
 
         short_code = input().lower()
 
         if short_code == 'ca':
+                    print('\n') 
                     print("Sign Up")
-                    print('*' * 50)
+                    print('.' * 10)
                     username = input("User_name: ")
                     password = input("Enter Password\n")
                     save_user(create_new_user(username,password))
-                    print("*"*85)
+                    print('\n')
+                    print("*"*80)
                     print(f"Hello {username}, Your account has been created successfully! Your password is: {password}")
-                    print("*"*85)
+                    print("*"*80)
 
-        elif short_code == "li":
+        elif short_code == "al":
                     print("*"*50)
                     print("Enter your User name and your Password to log in")
                     print('*' * 50)
                     username = input("User name: ")
                     password = input("password: ")
-                    login = login_user(username,password)
-                    if login_user == login:
-                        print(f"Hello {username}, Welcome to your Password Locker.")  
-                        print('\n')
+                    print('\n')
+
+                    print('.' * 50)
+                    print(f"Hello {username}, Welcome to your Password Locker.") 
+                    print('.' * 50) 
+                    print('\n')                        
         while True:
                     print("Use these short codes:\n cc - create new credentials \n dc - display credentials \n fc - find credential \n d - delete credential \n ex - Exit application")
                     short_code = input().lower().strip()
@@ -114,8 +117,10 @@ def main():
                         userName = input()
                         while True:
                             print(" tp - type password for available account:\n gp - generate random password")
+                            print('\n')
                             password_Choice = input().lower().strip()
                             if password_Choice == 'tp':
+                                print('\n')
                                 password = input("Enter your own password\n")
                                 break
                             elif password_Choice == 'gp':
@@ -126,7 +131,9 @@ def main():
                                 
                         save_credentials(create_new_credential(account,userName,password))
                         print('\n')
-                        print(f"Account Credential for: {account} - UserName: {userName} - Password:{password} created succesfully")
+                        print('.'* 90)
+                        print(f"Credentials for: {account} account - UserName: {userName} - Password:{password} created succesfully")
+                        print('.'* 90)
                         print('\n')
                     elif short_code == "dc":
                         if display_accounts_details():
@@ -137,7 +144,7 @@ def main():
                             for account in display_accounts_details():
                                 print(f" Account:{account.account} \n User Name:{username}\n Password:{password}")
                                 print('_'* 30)
-                            print('*' * 30)
+                                print('*' * 30)
                         else:
                             print("You don't have any credentials saved yet")
                           
