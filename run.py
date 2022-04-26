@@ -44,7 +44,7 @@ def save_credentials(credentials):
      Function to save Credentials to the credentials list
      """
      credentials. save_credentials()
-def display_accounts_details():
+def display_credential_details():
      """
      Function that returns credentials saved in the list.
      """
@@ -85,13 +85,13 @@ def main():
                     print('\n') 
                     print("Sign Up")
                     print('.' * 10)
-                    username = input("User_name: ")
+                    username = input("Username: ")
                     password = input("Enter Password\n")
                     save_user(create_new_user(username,password))
                     print('\n')
-                    print("*"*80)
-                    print(f"Hello {username}, Your account has been created successfully! Your password is: {password}")
-                    print("*"*80)
+                    print("*"*90)
+                    print(f"Your account has been created successfully! Your username is: {username} and password is: {password}")
+                    print("*"*90)
 
         elif short_code == "al":
                     print("*"*50)
@@ -131,18 +131,17 @@ def main():
                                 
                         save_credentials(create_new_credential(account,userName,password))
                         print('\n')
-                        print('.'* 90)
+                        print('.'* 100)
                         print(f"Credentials for: {account} account - UserName: {userName} - Password:{password} created succesfully")
-                        print('.'* 90)
+                        print('.'* 100)
                         print('\n')
                     elif short_code == "dc":
-                        if display_accounts_details():
-                            print("Here's your list of account credentials: ")
+                        if display_credential_details():
+                            print("Here's a list of all your account credentials: ")
                             
                             print('*' * 30)
-                            print('_'* 30)
-                            for account in display_accounts_details():
-                                print(f" Account:{account.account} \n User Name:{username}\n Password:{password}")
+                            for credentials in display_credential_details():
+                                print(f" Account:{credentials.account} \n User Name:{credentials.userName}\n Password:{credentials.password}")
                                 print('_'* 30)
                                 print('*' * 30)
                         else:
@@ -165,7 +164,6 @@ def main():
                         search_name = input().lower()
                         if find_credential(search_name):
                             search_credential = find_credential(search_name)
-                            print("_"*50)
                             search_credential.delete_credentials()
                             print('\n')
                             print(f"Credentials for {search_credential.account} successfully deleted")

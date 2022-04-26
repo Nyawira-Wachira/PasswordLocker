@@ -1,7 +1,7 @@
 from user import User 
 import random
 import string
-import pyperclip
+
 
 class Credentials():
     """
@@ -54,15 +54,13 @@ class Credentials():
         for credential in cls.credentials_list:
             if credential.account == account:
                 return credential
-    @classmethod
-    def copy_password(cls,account):
-        found_credentials = Credentials.find_credential(account)
-        pyperclip.copy(found_credentials.password)
-
 
 
     def generatePassword(stringLength=8):
-        """method to generate a random password"""
+        """
+        method to generate a random password
+        
+        """
         password = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
         return ''.join(random.choice(password) for i in range(stringLength))
 
